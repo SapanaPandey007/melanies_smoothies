@@ -1,5 +1,7 @@
 # Import python packages
 import streamlit as st
+cnx = st.connection("snowflake")
+session = cnx.session()
 from snowflake.snowpark.functions import col
 
 # Write directly to the app
@@ -31,8 +33,7 @@ if  ingredients_list:
         st.success('Your Smoothie is ordered!',icon="✅")
 
 
-cnx = st.connection("snowflake")
-session = cnx.session()
+
 
 
 
